@@ -5,8 +5,8 @@ import java.util.Map;
 
 import org.eclipse.dirigible.components.base.spring.BeanProvider;
 import org.eclipse.dirigible.components.extensions.service.ExtensionService;
-import org.eclipse.dirigible.engine.java.annotations.http.Controller;
-import org.eclipse.dirigible.engine.java.annotations.http.Get;
+import org.eclipse.dirigible.sdk.http.Controller;
+import org.eclipse.dirigible.sdk.http.Get;
 
 /**
  * REST endpoint that queries the Dirigible extension registry to verify that
