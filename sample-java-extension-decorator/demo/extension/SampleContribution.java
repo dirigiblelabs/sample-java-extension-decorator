@@ -1,6 +1,6 @@
 package demo.extension;
 
-import org.eclipse.dirigible.engine.java.annotations.Extension;
+import org.eclipse.dirigible.sdk.extensions.Extension;
 
 /**
  * Demonstrates {@code @Extension}: registers this class as a contribution to
