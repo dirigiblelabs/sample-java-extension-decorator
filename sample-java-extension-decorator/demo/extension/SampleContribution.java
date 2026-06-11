@@ -3,14 +3,15 @@ package demo.extension;
 import org.eclipse.dirigible.sdk.extensions.Extension;
 
 /**
- * Demonstrates {@code @Extension}: registers this class as a contribution to
- * {@code "java-sample-extension-point"}. Consumers that query that extension point via
- * {@code ExtensionService.findByExtensionPoint} will see this class listed and can instantiate it
- * on demand to call {@link #describe()}.
+ * Demonstrates {@code @Extension}: registers this class as a typed contribution to
+ * {@link SampleExtensionPoint}. The runtime validates the implementation at registration time —
+ * consumers that call {@code Extensions.find(SampleExtensionPoint.class)} receive a
+ * {@code List<SampleExtensionPoint>} that they can invoke directly.
  */
-@Extension(name = "sample-contribution", to = "java-sample-extension-point")
-public class SampleContribution {
+@Extension(target = SampleExtensionPoint.class, name = "sample-contribution")
+public class SampleContribution implements SampleExtensionPoint {
 
+    @Override
     public String describe() {
         return "Hello from SampleContribution!";
     }
