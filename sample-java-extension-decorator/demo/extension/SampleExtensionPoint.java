@@ -1,14 +1,10 @@
 package demo.extension;
 
-import org.eclipse.dirigible.sdk.extensions.ExtensionPoint;
-
 /**
- * Demonstrates {@code @ExtensionPoint}: declares the typed contract that contributing classes
- * implement. Consumers retrieve every registered implementor via
- * {@code Extensions.find(SampleExtensionPoint.class)} and call {@link #describe()} directly,
- * with no reflection.
+ * An extension point is just a plain Java interface — no annotation needed. Contributions are
+ * {@code @Component} beans that implement it; consumers receive them all via collection injection
+ * ({@code List<SampleExtensionPoint>}) or {@code Extensions.find(SampleExtensionPoint.class)}.
  */
-@ExtensionPoint("Sample Java extension point")
 public interface SampleExtensionPoint {
 
     String describe();
