@@ -24,3 +24,12 @@ GET /services/java/sample-java-extension-decorator/demo/extension/ExtensionConsu
 ```
 
 Returns a JSON array including `{ "name": "sample-contribution", "module": "demo.extension.SampleContribution" }`.
+
+## Consuming extensions
+
+Two ways:
+
+- **Programmatic lookup** — `ExtensionConsumer` calls `Extensions.find(SampleExtensionPoint.class)`.
+- **Collection injection (Spring-style)** — `InjectingConsumer` takes a `List<SampleExtensionPoint>` in its constructor; the bean container injects every contribution.
+
+See the [Develop guide](https://www.dirigible.io/help/develop/extension-providers/) and the [Java SDK](https://www.dirigible.io/sdk/).
